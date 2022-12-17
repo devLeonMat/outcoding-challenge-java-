@@ -1,7 +1,8 @@
 Project 1
 Technologies: java 11, Spring boot, spring data, Lombok, Spring security. Postgress, Mysql, Sql Server, or mongoDB
 structure:
- 
+ <img width="493" alt="image" src="https://user-images.githubusercontent.com/16999490/208264976-f3295364-bbb2-47e6-b002-a0628472e78b.png">
+
 
 Where the controller receives the request, in the facade layer we can do many validations prior to the service layer, and the mapper what it does is transform objects and thus not show the structure of our entities. Then we call the services and after that the implementation of this service, in the service we get the courses by calling the repository using JPA.
 to keep a clean and tidy code we will use Lombok which saves us the work of having the getter and setter visible.
@@ -16,38 +17,27 @@ PATCH: course/${courseId}.      -> in this endpoint we can update diferente para
 progress could be updated as each module of each course is completed.
 
 CONTROLLER:@Slf4j
-@RestController
-@RequestMapping("/v1/course")
-@AllArgsConstructor(onConstructor = @__(@Autowired))
-public class CourseController {
 
-private CourseFacade courseFacade
+<img width="738" alt="image" src="https://user-images.githubusercontent.com/16999490/208264994-d8f8902a-71e4-4d8d-8c18-2d05f925ecd7.png">
 
-@GetMapping
-@ResponseStatus(HttpStatus.OK)
-public GenericResponse<ProcessItemResponseDTO> getAllCourses(@RequestAttribute UuserSession userSession) {
-log.info("[CourseController:getAllCourses]");
-var response = new GenericResponse<CoursesResponseDTO>();
-response.setData(courseFacade.getAllCourser(userSession));
-response.setSuccess(true);
-return response;
-}
 
-}
+
 REPOSITORY
-@Query(nativeQuery = true, value = "select c from course c inner join student_enrolled s where s.id_student = :studentId")
-List<Course> findAllByUser(User user);
 
-@Query(nativeQuery = true, value = "select c from course c inner join location l where l.available_location = :studentLocation")
-List<Course> findAllAvailableCourse(Location userLocation);
+<img width="839" alt="image" src="https://user-images.githubusercontent.com/16999490/208265002-9365363e-8297-4789-b18a-467f03e63907.png">
+
 
 
 
 FLOW:  
+<img width="1344" alt="image" src="https://user-images.githubusercontent.com/16999490/208265037-0ced1c9a-ec3d-4fec-b932-b730d027f3c4.png">
 
 Sequence diagram:
+<img width="975" alt="image" src="https://user-images.githubusercontent.com/16999490/208265053-005b2996-51b9-4de8-8f99-2d394c203837.png">
+
 
 Data base 
+<img width="973" alt="image" src="https://user-images.githubusercontent.com/16999490/208265043-38bfe3dc-057c-47c4-a217-6b6cb1e65523.png">
 
 
 
