@@ -7,12 +7,15 @@ structure:
 Where the controller receives the request, in the facade layer we can do many validations prior to the service layer, and the mapper what it does is transform objects and thus not show the structure of our entities. Then we call the services and after that the implementation of this service, in the service we get the courses by calling the repository using JPA.
 to keep a clean and tidy code we will use Lombok which saves us the work of having the getter and setter visible.
 we will also use the pattern builder to obtain customized objects. and this will be used a lot in the mapper package.
-regarding the communication with other microservices we can use Feign for its easy implementation and high concurrency, besides controlling exceptions is very well suited with the proposed structure where we will use exceptionHandler and have coded and customized error messages which allows us to have a better traceability in the logs. in interceptor we could implement custom user validation
+regarding the communication with other microservices we can use Feign for its easy implementation and high concurrency, besides controlling exceptions is very well suited with the proposed structure where we will use exceptionHandler and have coded and customized error messages which allows us to have a better traceability in the logs. in interceptor we could implement custom user validation.
+
 FOR THE PROJECT WE COULD IMPLEMENT MANY ENDPOINTS
 among them:
-GET: course.                    -> to obtain all courses available for the current user 
-GET: course/${courseId}.        -> to obtain details about the selectec course 
-PATCH: course/${courseId}.      -> in this endpoint we can update diferente parameters about the course.
+|Path| Description|
+|-----------|---------|
+|GET: course. |                   to obtain all courses available for the current user. |
+|GET: course/${courseId}.  |      to obtain details about the selectec course.|
+|PATCH: course/${courseId}.  |    in this endpoint we can update diferente parameters about the course.|
 
 progress could be updated as each module of each course is completed.
 
