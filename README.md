@@ -42,5 +42,19 @@ progress could be updated as each module of each course is completed.
 <img width="973" alt="image" src="https://user-images.githubusercontent.com/16999490/208265043-38bfe3dc-057c-47c4-a217-6b6cb1e65523.png">
 
 
+Additional Practical Interview Questions:
 
+1.	How would you make an application testable, what do you do to ensure code quality?
 
+First: work with guidelines or standards and good practices, because having a good code is easy to test.
+second: make unit tests to the lines of code that require it and cover all the possible cases, also you should request a minimum of 85 to 90 % of test coverage, we could add automated tests.
+Third: use some tool available to obtain reports, something like sonarCloud.
+Finally add the test execution in the pipeline.
+
+2.	From a software development perspective, what steps might you take, on an ongoing basis, to continually improve your skillset?
+
+All developers must have a curious nature, always looking to learn something new, technology advances very fast and we must keep up with it. we could take courses on platforms such as Cloud Guru or Udemy
+
+3.	Provide an example of a time when you just couldn't complete all of your work on time to meet a deadline. What did you do? What was the result?.
+
+When the estimate was not very accurate, the first thing I did was to talk to my scrum master to arrange some support or a time extension. we should always seek help if we have any blockers.
